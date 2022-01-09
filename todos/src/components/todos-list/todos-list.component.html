@@ -8,13 +8,20 @@
     <th>title</th>
     <th>state</th>
     <th>user</th>
+    <th>action</th>
   </tr>
 </thead>
 <tbody>
-<tr *ngFor="let todos of getDatas">
-  <td>{{todos.getTitle}}</td>
-  <td>{{todos.getState}}</td>
-  <td>{{todos.getUser.getId}}</td>
+<tr *ngFor="let todo of getDatas | orderByState" [ngClass]="todo.isDone ? 'strike' : ''">
+  <td>{{todo.getTitle}}</td>
+  <td>{{todo.getState}}</td>
+  <td>{{todo.getUser.getId}}</td>
+  <td>
+    <div class="form-check">
+      <input class="form-check-input" [disabled]="todo.isDone" type="checkbox" [(ngModel)]="todo.isDone" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault"></label>
+    </div>
+  </td>
 </tr>
 </tbody>
 </table>

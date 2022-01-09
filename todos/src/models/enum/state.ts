@@ -1,5 +1,6 @@
 export enum State {
-  STATE1,
-  STATE2,
-  STATE3
+  INIT = 'init',
+  TODO = 'todo',
+  DONE = 'done'
+
 }

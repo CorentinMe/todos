@@ -21,4 +21,13 @@ export class Todo {
   public get getUser(): User {
     return this.user;
   }
+
+  public get isDone(): boolean {
+    return this.state === State.DONE;
+  }
+
+  public set isDone(done: boolean){
+    if(done)
+      this.state = State.DONE;
+  }
 }
