@@ -1,0 +1,20 @@
+<select [(ngModel)]="selectedUser" (ngModelChange)="selectedUserChange()" class="form-select">
+  <option *ngFor="let user of getUsers" [ngValue]="user">{{user.getId}}</option>
+</select>
+
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>title</th>
+    <th>state</th>
+    <th>user</th>
+  </tr>
+</thead>
+<tbody>
+<tr *ngFor="let todos of getDatas">
+  <td>{{todos.getTitle}}</td>
+  <td>{{todos.getState}}</td>
+  <td>{{todos.getUser.getId}}</td>
+</tr>
+</tbody>
+</table>
