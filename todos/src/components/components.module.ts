@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TodosListComponent } from './todos-list/todos-list.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/shared/shared.module';
+import { DetailsModule } from './details/details.module';
+import { ComponentsRoutingModule } from './components-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    TodosListComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    ComponentsRoutingModule,
+    DetailsModule
   ],
   exports: [
-    TodosListComponent
   ]
 })
 export class ComponentsModule { }

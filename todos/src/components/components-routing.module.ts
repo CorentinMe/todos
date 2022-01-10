@@ -5,16 +5,16 @@ const routes: Routes = [
   {
     path: '', children: [
       {
-        path: '',
-        redirectTo: 'todos',
-        pathMatch: 'full'
+        path: 'todos',
+        loadChildren: () => import('./todos-list/todos.module').then((m) => m.TodosModule)
       }
     ]
   }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class ComponentsRoutingModule { }

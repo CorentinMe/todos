@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModelsModule } from 'src/models/models.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+import { ComponentsModule } from 'src/components/components.module';
 
 
 
@@ -10,6 +12,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     NgbModule,
+    RouterModule,
+    ComponentsModule,
     ModelsModule
   ]
 })

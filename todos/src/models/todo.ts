@@ -2,14 +2,26 @@ import { State } from "./enum/state";
 import { User } from "./user";
 
 export class Todo {
+  private id: number;
   private title: string;
   private state: State;
   private user: User;
+  private description: string;
 
-  constructor(title: string, state: State, user: User){
+  constructor(id: number, title: string, state: State, user: User, description: string){
+    this.id = id;
     this.title = title;
     this.state = state;
     this.user = user;
+    this.description = description;
+  }
+
+  public get getId(): number {
+    return this.id;
+  }
+
+  public get getDescription(): string {
+    return this.description;
   }
 
   public get getTitle(): string {

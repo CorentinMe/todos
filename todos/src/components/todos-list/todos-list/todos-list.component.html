@@ -13,7 +13,7 @@
 </thead>
 <tbody>
 <tr *ngFor="let todo of getDatas | orderByState" [ngClass]="todo.isDone ? 'strike' : ''">
-  <td>{{todo.getTitle}}</td>
+  <td><a [routerLink]="['details', todo.getId]">{{todo.getTitle}}</a></td>
   <td>{{todo.getState}}</td>
   <td>{{todo.getUser.getId}}</td>
   <td>
@@ -25,3 +25,4 @@
 </tr>
 </tbody>
 </table>
+<router-outlet></router-outlet>
