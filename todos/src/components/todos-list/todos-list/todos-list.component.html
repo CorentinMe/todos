@@ -1,7 +1,7 @@
-<select [(ngModel)]="selectedUser" (ngModelChange)="selectedUserChange()" class="form-select">
+<select [(ngModel)]="selectedUser" [disabled]="true" (ngModelChange)="selectedUserChange()" class="form-select m-2">
   <option *ngFor="let user of getUsers" [ngValue]="user">{{user.getId}}</option>
 </select>
-
+<a class="btn btn-sm btn-primary m-2" [routerLink]="['edition']" role="button">create Todo</a>
 <table class="table table-striped">
 <thead>
   <tr>

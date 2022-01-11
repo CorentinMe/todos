@@ -7,7 +7,6 @@ import { UserService } from './user.service';
   providedIn: 'root'
 })
 export class TodosService {
-
   private id: number = 1;
   private todos: Todo[] = [];
 
@@ -38,5 +37,9 @@ export class TodosService {
 
   public findById(id: number): Todo | undefined {
     return this.todos.find(t => t.getId == id);
+  }
+
+  public createTodo(title: string, desription: string) {
+    this.todos.unshift(new Todo(this.getNewId(), title, State.INIT, this.userService.findFirstUser(), desription));
   }
 }
